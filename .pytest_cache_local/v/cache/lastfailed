@@ -1,0 +1,13 @@
+{
+  "pytest-cache-files-b3rxm8kw": true,
+  "pytest-cache-files-upqk8lr4": true,
+  "tests/test_app_init.py::test_highlowttui_accepts_provider_and_banner": true,
+  "tests/test_app_init.py::test_highlowtui_default_banner_is_empty": true,
+  "tests/test_license.py::test_no_key_returns_free": true,
+  "tests/test_license.py::test_valid_key_from_server_returns_pro": true,
+  "tests/test_license.py::test_valid_key_writes_cache": true,
+  "tests/test_license.py::test_cached_key_skips_server_call": true,
+  "tests/test_license.py::test_server_down_uses_cache": true,
+  "tests/test_license.py::test_server_down_no_cache_returns_free": true,
+  "tests/test_license.py::test_invalid_key_returns_free": true
+}

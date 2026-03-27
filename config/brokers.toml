@@ -1,0 +1,53 @@
+# HighLow TUI — Broker Configuration
+# Copy this file to ~/.highlowticker/config.toml and fill in your credentials.
+#
+# default_broker: which broker to connect to on startup
+#   options: "ibkr", "yahoo", "tos"
+
+[general]
+default_broker = "yahoo"
+
+# ──────────────────────────────────────────────────────────────────────
+# Yahoo Finance (free, polling-based, no API key required)
+# ──────────────────────────────────────────────────────────────────────
+[yahoo]
+poll_interval = 60  # seconds between polls
+
+# ──────────────────────────────────────────────────────────────────────
+# Interactive Brokers (real-time via TWS / IB Gateway)
+#
+# Requirements:
+#   1. TWS or IB Gateway running locally
+#   2. API connections enabled in TWS settings (Edit → Global Config → API → Settings)
+#   3. pip install ib_async
+# ──────────────────────────────────────────────────────────────────────
+[ibkr]
+host      = "127.0.0.1"
+port      = 7497        # 7497 = paper trading, 7496 = live trading
+client_id = 1
+
+# ──────────────────────────────────────────────────────────────────────
+# ThinkOrSwim / Schwab (real-time via Schwab Streaming API)
+#
+# Requirements:
+#   1. Schwab developer account: https://developer.schwab.com
+#   2. Create an app to get app_key and app_secret
+#   3. pip install schwab-py
+#   4. First run requires manual OAuth flow (see README)
+# ──────────────────────────────────────────────────────────────────────
+[tos]
+app_key      = ""
+app_secret   = ""
+callback_url = "https://127.0.0.1"
+token_path   = ""  # leave empty for default: ~/.highlowticker/schwab_token.json
+
+# ──────────────────────────────────────────────────────────────────────
+# Signal Routing — streams regime signals to external strategies
+#
+# When enabled, a TCP server listens on host:port and pushes JSON-line
+# signals to all connected clients (e.g., NinjaTrader, custom bots).
+# ──────────────────────────────────────────────────────────────────────
+[signal_routing]
+enabled = true
+host    = "127.0.0.1"
+port    = 9137
