@@ -7,7 +7,6 @@ token.json
 # Schwab provider files — Pro tier only, not included in free tier
 core/schwab_connection.py
 core/shared_api_client.py
-core/subscription_manager.py
 providers/schwab_provider.py
 
 # Python
@@ -29,7 +28,7 @@ build/
 htmlcov/
 
 # Output artifacts
-output/
+
 
 # OS
 .DS_Store
